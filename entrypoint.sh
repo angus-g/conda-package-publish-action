@@ -24,6 +24,12 @@ check_if_meta_yaml_file_exists() {
 }
 
 upload_package(){
+    conda config --remove-key channels
+    channels=($INPUT_CHANNELS)
+    for ((i=${#channels[@]}-1; i>=0; i--)); do
+	conda config --add channels "${channels[$i]}"
+    done
+
     conda config --set anaconda_upload yes
     anaconda login --username $INPUT_ANACONDAUSERNAME --password $INPUT_ANACONDAPASSWORD
     conda build . --label $INPUT_LABEL

@@ -15,6 +15,8 @@ inputs:
   label:
     description: 'Label to pass to Anaconda upload'
     default: 'main'
+  channels:
+    description: 'Space-delimited list of Anaconda channels to use'
 runs:
   using: 'docker'
   image: 'Dockerfile'
