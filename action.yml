@@ -2,9 +2,9 @@ name: 'Conda Package Publish Action'
 description: 'Build and Publish conda package'
 author: 'Andrew Prokhorenkov'
 branding:
-  icon: 'package'  
+  icon: 'package'
   color: 'purple'
-inputs: 
+inputs:
   subDir:
     description: 'Sub-directory with project'
     default: '.'
@@ -12,6 +12,9 @@ inputs:
     description: 'Anaconda Username'
   AnacondaPassword:
     description: 'Anaconda Password'
+  label:
+    description: 'Label to pass to Anaconda upload'
+    default: 'main'
 runs:
   using: 'docker'
   image: 'Dockerfile'
