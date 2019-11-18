@@ -24,7 +24,7 @@ check_if_meta_yaml_file_exists() {
 }
 
 upload_package(){
-    conda config --remove-key channels
+    conda config --remove-key channels || true
     channels=($INPUT_CHANNELS)
     for ((i=${#channels[@]}-1; i>=0; i--)); do
 	conda config --add channels "${channels[$i]}"
