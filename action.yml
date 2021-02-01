@@ -1,6 +1,6 @@
 name: 'Conda Package Publish Action'
 description: 'Build and Publish conda package'
-author: 'Andrew Prokhorenkov'
+author: 'Angus Gibson'
 branding:
   icon: 'package'
   color: 'purple'
